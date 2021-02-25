@@ -40,6 +40,7 @@ except Exception as error:
 
 
 finally:
-    time.sleep(5)
+    time.sleep(15)
+
     # закрываем браузер после всех манипуляций
     browser.quit()
