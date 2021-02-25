@@ -5,8 +5,11 @@ from selenium import webdriver
 import math
 import time
 
+
 def calc(x):
   return str(math.log(abs(12*math.sin(int(x)))))
+
+
 try:
     browser = webdriver.Chrome()
 
@@ -15,8 +18,7 @@ try:
     
     WebDriverWait(browser, 15).until(EC.text_to_be_present_in_element(
     (By.ID, "price"), "$100"))
-        #.text_to_be_present_in_element((By.ID, "здесь пишем ID"), "здесь текст")
-        #
+       
     button = browser.find_element_by_id("book")
     button.click()
 
@@ -38,7 +40,6 @@ except Exception as error:
 
 
 finally:
-    # ожидание чтобы визуально оценить результаты прохождения скрипта
     time.sleep(5)
     # закрываем браузер после всех манипуляций
     browser.quit()
